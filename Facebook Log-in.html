@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Facebook - log in or sign up</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            div {
+                background-color: #f1f0f0;
+                height: 68ch;
+                width: 100%;
+            }
+            #facebook-logo {
+                width: 220px;
+                height: 220px;
+                margin-top: 55px;
+                margin-left: 20%;
+                margin-bottom: -100px;
+            }
+            p {
+                font-family: arial;
+                margin-left: 285px;
+                font-size: 20px;
+            }
+            a, a.a {
+                font-family: arial;
+                font-size: x-small;
+                text-decoration: none;
+                color: gray;
+            }
+            a.a:hover {
+                text-decoration: underline;
+            }
+            div.form {
+                background-color: white;
+                width: 285px;
+                height: 255px;
+                float: right;
+                border-radius: 5px;
+                margin-right: 40ch;
+                margin-top: -20ch;
+            }
+            input[type=text], input[type=password] {
+                border: 1px solid #f1f0f0;
+                border-radius: 5px;
+                padding: 5px;
+                padding-left: 10px;
+                margin-top: 10px;
+                height: 25px;
+                width: 86%;
+            }
+            button.submit {
+                border: 0;
+                border-radius: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background-color: #1e6dff;
+                padding: 5px;
+                height: 40px;
+                width: 92%;
+                color: white;
+                font-family: arial;
+                font-size: 15px;
+            }
+            button.newacc {
+                border: 0;
+                border-radius: 5px;
+                background-color: #228B22;
+                padding: 5px 10px;
+                height: 30px;
+                color: white;
+            }
+            button.submit:hover {
+                background-color: #1165ff;
+                cursor: pointer;
+            }
+            button.newacc:hover {
+                background-color: #008000;
+                cursor: pointer;
+            }
+            a.form {
+                color: blue;
+                font-family: arial;
+            }
+            a.form:hover {
+                text-decoration: underline;
+            }
+            a.b {
+                font-family: arial;
+                color: black;
+                font-size: 10px;
+            }
+            a.b:hover {
+                text-decoration: underline;
+            }
+            div.b {
+                height: 10px;
+                width: 285px;
+                float: right;
+                margin-right: 40ch;
+            }
+        </style>
+        <script>
+            var login_attempts = 3;
+            function logIn() {
+            var email, pass, text;
+
+            email = document.getElementById("mail").value;
+            pass = document.getElementById("pass").value;
+
+            if (email == 'matthew' && pass == 'panda') {
+                text = "Login Complete";
+                window.location.replace("Facebook.html");
+            } else {
+                login_attempts = login_attempts-1;
+                text = "Login attempts available "+ login_attempts + "";
+                if(login_attempts == 0) {
+                text = "Please try again in:"
+                document.getElementById("mail").disabled = true;
+                document.getElementById("pass").disabled = true;
+                document.getElementById("login").disabled = true;
+
+                var remainingTime = 15;
+                var elem = document.getElementById('some_div');
+                var timer = setInterval(countdown, 1000);
+                function countdown() {
+                    if (remainingTime == -1) {
+                        clearTimeout(timer);
+                        document.location.reload();
+                        } else {
+                            elem.innerHTML = remainingTime + ' seconds left';
+                            remainingTime--;
+                        }
+                    }
+                }
+            }
+        document.getElementById("demo").innerHTML = text;
+        return false;
+        }
+        </script>
+    </head> 
+    <body>
+        <div>
+            <img src="facebook.svg" id="facebook-logo"><br>
+            <p>Facebook helps you connect and share<br>with the people in your life.</p>
+            <div class="form">
+                <center>
+                    <input type="text" placeholder="Email or Phone number" id="mail">
+                    <input type="password" placeholder="Password" id="pass">
+                    <button type="button" class="submit" onclick="logIn()" id="login"><b>Log In</b></button><br>
+                    <a href="" class="form">Forgot password?</a><br>
+                    <hr style="width: 90%; margin-top: 15px; margin-bottom: 1px;" size="1" color="silver"><br>
+                    <button type="button" class="newacc"><b>Create new account</b></button>
+                </center>
+            </div><br><br><br><br><br><br>
+            <div class="b">
+                <center>
+                    <a href="" class="b"><b>Create a Page</b></a>
+                    <font size="1">for a celebrity, brand or business.</font>
+                    <h4 id="demo"></h4>
+                    <h5 id="some_div"></h5>
+                </center>
+            </div>
+        </div><br>
+        <a href="" style="margin-left: 21%;">English (UK)</a>&nbsp
+        <a href="" class="a">Filipino</a>&nbsp
+        <a href="" class="a">Bisaya</a>&nbsp
+        <a href="" class="a">Español</a>&nbsp
+        <a href="" class="a">日本語</a>&nbsp
+        <a href="" class="a">한국어</a>&nbsp
+        <a href="" class="a">中文(简体)</a>&nbsp
+        <a href="" class="a">العربية</a>&nbsp
+        <a href="" class="a">Português (Brasil)</a>&nbsp
+        <a href="" class="a">Français (France)</a>&nbsp
+        <a href="" class="a">Deutsch</a>&nbsp<br>
+        <hr style="margin-bottom: -15px; margin-left: 21%; width: 56%;" size="1" color="silver"><br>
+        <a href="" class="a" style="margin-left: 21%;">Sign up</a>&nbsp&nbsp
+        <a href="" class="a">Log in</a>&nbsp&nbsp
+        <a href="" class="a">Messenger</a>&nbsp&nbsp
+        <a href="" class="a">Facebook Lite</a>&nbsp&nbsp
+        <a href="" class="a">Watch</a>&nbsp&nbsp
+        <a href="" class="a">Places</a>&nbsp&nbsp
+        <a href="" class="a">Games</a>&nbsp&nbsp
+        <a href="" class="a">Marketplace</a>&nbsp&nbsp
+        <a href="" class="a">Facebook Play</a>&nbsp&nbsp
+        <a href="" class="a">Jobs</a>&nbsp&nbsp
+        <a href="" class="a">Oculus</a>&nbsp&nbsp
+        <a href="" class="a">Portal</a>&nbsp&nbsp
+        <a href="" class="a">Instagram</a>&nbsp&nbsp
+        <a href="" class="a">Bulletin</a>&nbsp&nbsp
+        <a href="" class="a">Local</a><br>
+        <a href="" class="a" style="margin-left: 21%;">Fundraisers</a>&nbsp&nbsp
+        <a href="" class="a">Services</a>&nbsp&nbsp
+        <a href="" class="a">Voting Information Center</a>&nbsp&nbsp
+        <a href="" class="a">Groups</a>&nbsp&nbsp
+        <a href="" class="a">About</a>&nbsp&nbsp
+        <a href="" class="a">Create Ad</a>&nbsp&nbsp
+        <a href="" class="a">Create Page</a>&nbsp&nbsp
+        <a href="" class="a">Developers</a>&nbsp&nbsp
+        <a href="" class="a">Careers</a>&nbsp&nbsp
+        <a href="" class="a">Privacy</a>&nbsp&nbsp
+        <a href="" class="a">Cookies</a>&nbsp&nbsp
+        <a href="" class="a">Ad choices</a>&nbsp&nbsp
+        <a href="" class="a">Terms</a><br>
+        <a href="" class="a" style="margin-left: 21%;">Help</a>
+    </body>  
+</html>
